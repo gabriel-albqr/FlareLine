@@ -9,32 +9,49 @@ class GlobalTheme {
   static final Color _lightFocusColor = Colors.black.withOpacity(0.12);
   static final Color _darkFocusColor = Colors.white.withOpacity(0.12);
 
-  static ThemeData lightThemeData = theme(lightColorScheme, _lightFocusColor,
-      lightAppBarTheme, GlobalColors.darkText, lightCardTheme);
-  static ThemeData darkThemeData = theme(darkColorScheme, _darkFocusColor,
-      darkAppBarThemd, GlobalColors.darkText, darkCardTheme);
+  static ThemeData lightThemeData = theme(
+    lightColorScheme,
+    _lightFocusColor,
+    lightAppBarTheme,
+    GlobalColors.darkText,
+    lightCardTheme,
+  );
 
-  static ThemeData theme(ColorScheme colorScheme, Color focusColor,
-      AppBarTheme appBarTheme, Color hintColor, CardTheme cardTheme) {
+  static ThemeData darkThemeData = theme(
+    darkColorScheme,
+    _darkFocusColor,
+    darkAppBarTheme,
+    GlobalColors.darkText,
+    darkCardTheme,
+  );
+
+  static ThemeData theme(
+    ColorScheme colorScheme,
+    Color focusColor,
+    AppBarTheme appBarTheme,
+    Color hintColor,
+    CardThemeData cardTheme,
+  ) {
     return ThemeData(
-        useMaterial3: true,
-        colorScheme: colorScheme,
-        focusColor: focusColor,
-        appBarTheme: appBarTheme,
-        textTheme: _textTheme,
-        hintColor: hintColor,
-        cardTheme: cardTheme);
+      useMaterial3: true,
+      colorScheme: colorScheme,
+      focusColor: focusColor,
+      appBarTheme: appBarTheme,
+      textTheme: _textTheme,
+      hintColor: hintColor,
+      cardTheme: cardTheme,
+    );
   }
 
-  static CardTheme lightCardTheme = const CardTheme(
+  static const CardThemeData lightCardTheme = CardThemeData(
     margin: EdgeInsets.zero,
     color: Colors.white,
-    surfaceTintColor:  Color(0xFFE2E8F0),
+    surfaceTintColor: Color(0xFFE2E8F0),
     shadowColor: Color(0x11000000),
     elevation: 0,
   );
 
-  static CardTheme darkCardTheme = CardTheme(
+  static final CardThemeData darkCardTheme = CardThemeData(
     margin: EdgeInsets.zero,
     color: GlobalColors.darkAppBar,
     surfaceTintColor: GlobalColors.border.withOpacity(0.05),
@@ -46,8 +63,9 @@ class GlobalTheme {
     backgroundColor: Colors.white,
   );
 
-  static const AppBarTheme darkAppBarThemd =
-      AppBarTheme(backgroundColor: GlobalColors.sideBar);
+  static const AppBarTheme darkAppBarTheme = AppBarTheme(
+    backgroundColor: GlobalColors.sideBar,
+  );
 
   static const ColorScheme lightColorScheme = ColorScheme(
     primary: GlobalColors.primary,
@@ -72,8 +90,7 @@ class GlobalTheme {
     secondaryContainer: GlobalColors.primary,
     background: GlobalColors.darkBackgroundColor,
     surface: Colors.white,
-    onBackground: Color(0x0DFFFFFF),
-    // White with 0.05 opacity
+    onBackground: Color(0x0DFFFFFF), // White com 0.05 opacity
     error: _darkFillColor,
     onError: _darkFillColor,
     onPrimary: _darkFillColor,
